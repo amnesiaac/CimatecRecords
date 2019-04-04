@@ -1,0 +1,51 @@
+﻿@model IEnumerable<CimatecRecords.Models.Letra>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Compositor.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Genero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Publicada)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Compositor.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Titulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Genero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Publicada)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Pk_Letra }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Pk_Letra }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Pk_Letra })
+        </td>
+    </tr>
+}
+
+</table>
